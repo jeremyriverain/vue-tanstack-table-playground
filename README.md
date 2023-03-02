@@ -1,6 +1,8 @@
-# tanstack-test-vue
+# Vue Tanstack Table Playground
 
-This template should help get you started developing with Vue 3 in Vite.
+Playground used for testing [Tanstack Table Library](https://tanstack.com/table/v8) with VueJS.
+
+[Online demo](https://loquacious-taffy-fb0485.netlify.app/)
 
 ## Recommended IDE Setup
 
