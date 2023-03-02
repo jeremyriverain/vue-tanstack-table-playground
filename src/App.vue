@@ -2,6 +2,7 @@
 import TableWithSorting from '@/components/TableWithSorting.vue'
 import ExternalLink from '@/components/ExternalLink.vue';
 import TableWithHeadersGrouped from '@/components/TableWithHeadersGrouped.vue';
+import TableWithPagination from '@/components/TableWithPagination.vue';
 </script>
 
 <template>
@@ -12,4 +13,7 @@ import TableWithHeadersGrouped from '@/components/TableWithHeadersGrouped.vue';
 
   <h2>Table with some headers grouped (<ExternalLink href="https://github.com/jeremyriverain/vue-tanstack-table-playground/blob/main/src/components/TableWithHeadersGrouped.vue">Source code</ExternalLink>)</h2>
   <TableWithHeadersGrouped />
+
+  <h2>Table with paginated results (<ExternalLink href="https://github.com/jeremyriverain/vue-tanstack-table-playground/blob/main/src/components/TableWithPagination.vue">Source code</ExternalLink>)</h2>
+  <TableWithPagination />
 </template>
