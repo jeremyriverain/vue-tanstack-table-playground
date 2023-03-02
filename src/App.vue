@@ -3,6 +3,7 @@ import TableWithSorting from '@/components/TableWithSorting.vue'
 import ExternalLink from '@/components/ExternalLink.vue';
 import TableWithHeadersGrouped from '@/components/TableWithHeadersGrouped.vue';
 import TableWithPagination from '@/components/TableWithPagination.vue';
+import TableWithRowSelection from '@/components/TableWithRowSelection.vue';
 </script>
 
 <template>
@@ -16,4 +17,7 @@ import TableWithPagination from '@/components/TableWithPagination.vue';
 
   <h2>Table with paginated results (<ExternalLink href="https://github.com/jeremyriverain/vue-tanstack-table-playground/blob/main/src/components/TableWithPagination.vue">Source code</ExternalLink>)</h2>
   <TableWithPagination />
+
+  <h2>Table with row selection (<ExternalLink href="https://github.com/jeremyriverain/vue-tanstack-table-playground/blob/main/src/components/TableWithRowSelection.vue">Source code</ExternalLink>)</h2>
+  <TableWithRowSelection />
 </template>
