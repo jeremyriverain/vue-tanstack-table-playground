@@ -23,43 +23,10 @@
 </template>
 
 <script lang="ts" setup>
+import { makeData, type Person } from '@/makeData';
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, type SortingState } from '@tanstack/table-core'
 import { FlexRender, useVueTable } from '@tanstack/vue-table';
 import { ref } from 'vue';
-
-type Person = {
-  firstName: string
-  lastName: string
-  profession: string
-  age: number
-}
-
-const defaultData: Person[] = [
-  {
-    firstName: 'tanner',
-    lastName: 'linsley',
-    age: 24,
-    profession: 'dentist'
-  },
-  {
-    firstName: 'tandy',
-    lastName: 'miller',
-    age: 40,
-    profession: 'developer'
-  },
-  {
-    firstName: 'joe',
-    lastName: 'dirte',
-    age: 45,
-    profession: 'clown'
-  },
-  {
-    firstName: 'averell',
-    lastName: 'dalton',
-    age: 35,
-    profession: 'gangster'
-  }
-]
 
 const columnHelper = createColumnHelper<Person>()
 
@@ -77,16 +44,16 @@ const columns = [
   columnHelper.accessor((row) => row.age, {
     id: 'age',
     cell: (info) => info.getValue(),
-    header: () => 'Âge',
+    header: () => 'Age',
   }),
-  columnHelper.accessor((row) => row.profession, {
-    id: 'profession',
+  columnHelper.accessor((row) => row.status, {
+    id: 'status',
     cell: (info) => info.getValue(),
-    header: () => 'Profession'
+    header: () => 'Status'
   }),
 ]
 
-const data = ref(defaultData)
+const data = ref<Person[]>(makeData(4))
 
 const sorting = ref<SortingState>([{desc: false, id: 'firstName'}])
 const table = useVueTable({
@@ -100,7 +67,6 @@ const table = useVueTable({
    }
   },
   onSortingChange: updaterOrValue => {
-    console.log('updaterOrValue', updaterOrValue)
     sorting.value = typeof updaterOrValue === 'function' ? updaterOrValue(sorting.value) : updaterOrValue
   },
   getCoreRowModel: getCoreRowModel(),
