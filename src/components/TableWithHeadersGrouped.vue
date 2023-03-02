@@ -1,20 +1,22 @@
 <template>
-  <table>
-    <thead>
-      <tr v-for="headerGroup in table.getHeaderGroups()" :key="headerGroup.id">
-        <th v-for="header in headerGroup.headers" :key="header.id" :colSpan="header.colSpan">
-          <FlexRender :render="header.column.columnDef.header" :props="header.getContext()" />
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="row in table.getRowModel().rows" :key="row.id">
-        <td v-for="cell in row.getVisibleCells()" :key="cell.id">
-          <FlexRender :render="cell.column.columnDef.cell" :props="cell.getContext()" />
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr v-for="headerGroup in table.getHeaderGroups()" :key="headerGroup.id">
+          <th v-for="header in headerGroup.headers" :key="header.id" :colSpan="header.colSpan">
+            <FlexRender :render="header.column.columnDef.header" :props="header.getContext()" />
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="row in table.getRowModel().rows" :key="row.id">
+          <td v-for="cell in row.getVisibleCells()" :key="cell.id">
+            <FlexRender :render="cell.column.columnDef.cell" :props="cell.getContext()" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -78,19 +80,3 @@ const table = useVueTable({
   getCoreRowModel: getCoreRowModel()
 })
 </script>
-
-<style scoped>
-table {
-  border-collapse: collapse;
-}
-
-th,
-td {
-  border: 1px solid black;
-  padding: 10px;
-}
-
-th {
-  font-weight: bold;
-}
-</style>
