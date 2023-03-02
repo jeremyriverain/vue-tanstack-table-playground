@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import TableTest1 from './components/TableTest1.vue';
+import BasicTableWithSorting from './components/BasicTableWithSorting.vue'
 </script>
 
 <template>
-  <TableTest1 />
+  <h1>Vue Tanstack Table Playground</h1>
+  <h2>Basic table with sorting capability</h2>
+  <BasicTableWithSorting />
 </template>
