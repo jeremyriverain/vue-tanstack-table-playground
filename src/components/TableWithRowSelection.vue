@@ -20,16 +20,22 @@
   <div>
     <pre>{{ rowSelection() }}</pre>
   </div>
-
 </template>
 
 <script lang="ts" setup>
 import { makeData, type Person } from '@/makeData'
-import { createColumnHelper, getCoreRowModel, type Table, type Row, type RowSelectionState, type OnChangeFn } from '@tanstack/table-core'
+import { createSignal } from '@/createSignal'
+import {
+  createColumnHelper,
+  getCoreRowModel,
+  type Table,
+  type Row,
+  type RowSelectionState,
+  type OnChangeFn
+} from '@tanstack/table-core'
 import { FlexRender, useVueTable } from '@tanstack/vue-table'
 import { h, ref } from 'vue'
 import CheckboxSelector from '@/components/CheckboxSelector.vue'
-import { shallowRef, triggerRef } from 'vue'
 
 const columnHelper = createColumnHelper<Person>()
 
@@ -86,17 +92,6 @@ const data = ref<Person[]>(makeData(4))
 
 const [rowSelection, setRowSelection] = createSignal<RowSelectionState>({})
 
-
-function createSignal<T>(value: T, options?: any): [() => T, (v: T) => void] {
-  const r = shallowRef(value)
-  const get = () => r.value
-  const set = (v: T) => {
-    r.value = typeof v === 'function' ? v(r.value) : v
-    if (options?.equals === false) triggerRef(r)
-  }
-  return [get, set]
-}
-
 const table = useVueTable({
   get columns() {
     return columns.value
@@ -106,8 +101,8 @@ const table = useVueTable({
   },
   state: {
     get rowSelection() {
-        return rowSelection()
-    },
+      return rowSelection()
+    }
   },
   enableRowSelection: true,
   onRowSelectionChange: setRowSelection as OnChangeFn<RowSelectionState>,

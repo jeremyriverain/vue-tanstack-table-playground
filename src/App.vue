@@ -4,6 +4,7 @@ import ExternalLink from '@/components/ExternalLink.vue';
 import TableWithHeadersGrouped from '@/components/TableWithHeadersGrouped.vue';
 import TableWithPagination from '@/components/TableWithPagination.vue';
 import TableWithRowSelection from '@/components/TableWithRowSelection.vue';
+import TableWithEditableCell from '@/components/TableWithEditableCell.vue';
 </script>
 
 <template>
@@ -20,4 +21,7 @@ import TableWithRowSelection from '@/components/TableWithRowSelection.vue';
 
   <h2>Table with row selection (<ExternalLink href="https://github.com/jeremyriverain/vue-tanstack-table-playground/blob/main/src/components/TableWithRowSelection.vue">Source code</ExternalLink>)</h2>
   <TableWithRowSelection />
+
+  <h2>Table with editable cell (<ExternalLink href="https://github.com/jeremyriverain/vue-tanstack-table-playground/blob/main/src/components/TableWithEditableCell.vue">Source code</ExternalLink>)</h2>
+  <TableWithEditableCell />
 </template>
