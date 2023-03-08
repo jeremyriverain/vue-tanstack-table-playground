@@ -5,6 +5,7 @@ import TableWithHeadersGrouped from '@/components/TableWithHeadersGrouped.vue';
 import TableWithPagination from '@/components/TableWithPagination.vue';
 import TableWithRowSelection from '@/components/TableWithRowSelection.vue';
 import TableWithEditableCell from '@/components/TableWithEditableCell.vue';
+import TableWithFilters from '@/components/TableWithFilters.vue';
 </script>
 
 <template>
@@ -24,4 +25,7 @@ import TableWithEditableCell from '@/components/TableWithEditableCell.vue';
 
   <h2>Table with editable cell (<ExternalLink href="https://github.com/jeremyriverain/vue-tanstack-table-playground/blob/main/src/components/TableWithEditableCell.vue">Source code</ExternalLink>)</h2>
   <TableWithEditableCell />
+
+  <h2>Table with filters (<ExternalLink href="https://github.com/jeremyriverain/vue-tanstack-table-playground/blob/main/src/components/TableWithFilters.vue">Source code</ExternalLink>)</h2>
+  <TableWithFilters />
 </template>

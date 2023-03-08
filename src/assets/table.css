@@ -1,5 +1,7 @@
-.table-container {
-  overflow-x: scroll;
+@media screen and (max-width: 768px) {
+  .table-container {
+    overflow-x: scroll;
+  }
 }
 table {
   border-collapse: collapse;
