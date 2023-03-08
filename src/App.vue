@@ -10,6 +10,8 @@ import TableWithFilters from '@/components/TableWithFilters.vue';
 
 <template>
   <h1>Vue Tanstack Table Playground</h1>
+
+  <p>I made this playground to explore how <a href="https://tanstack.com/table/v8">TanStack Table</a> integrates with VueJS.</p>
   
   <h2>Table with sorting capability (<ExternalLink href="https://github.com/jeremyriverain/vue-tanstack-table-playground/blob/main/src/components/TableWithSorting.vue">Source code</ExternalLink>)</h2>
   <TableWithSorting />
